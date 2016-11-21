@@ -14,6 +14,8 @@ public class PointData : MonoBehaviour
 		0f, // B
 		0f, // A
 		0f, // Radius
+		0f, // Time Start
+		0f, // Time End
 	};
 
 	// Use this for initialization

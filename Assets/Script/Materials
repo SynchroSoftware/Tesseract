@@ -1,0 +1,45 @@
+	static public Material GhostMaterial {get;set;}
+	static public Material StatusMaterial {get;set;}
+    
+    public static void InitSpecialMaterials()
+	{
+		try
+		{
+			if (null == Project.GhostMaterial) 
+			{
+				Material material = new Material (ColorModel.StandardShader);
+				material.SetFloat("_Mode", 3);
+				material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+				material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+				material.SetInt("_ZWrite", 0);
+				material.EnableKeyword("_ALPHATEST_ON");//DisableKeyword
+				material.EnableKeyword("_ALPHABLEND_ON");
+				material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = 3100;
+				material.SetInt ("_Cull", (int)UnityEngine.Rendering.CullMode.Off);
+				material.color = Colors.FadeColor;
+				GhostMaterial = material;
+			}
+
+			if (null == Project.StatusMaterial) 
+			{
+				//material 0, mode:0, SrcBlend: 1, DstBlend: 0, ZWrite: 1, ATO: False, ABO: False, APMO: False, RQ: 2000
+				Material material = new Material (ColorModel.StandardShader);
+				material.SetFloat("_Mode", 0);
+				material.SetInt("_SrcBlend", 1);
+				material.SetInt("_DstBlend", 0);
+				material.SetInt("_ZWrite", 1);
+				material.DisableKeyword("_ALPHATEST_ON");
+				material.DisableKeyword("_ALPHABLEND_ON");
+				material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = 2000;
+				material.SetInt ("_Cull", (int)UnityEngine.Rendering.CullMode.Off);
+				material.color = Colors.FadeColor;
+				StatusMaterial = material;
+			}
+		}
+		catch (Exception ex) 
+		{
+			// InitSpecialMaterials ex
+		}
+	}
