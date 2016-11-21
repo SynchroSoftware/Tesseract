@@ -4,7 +4,7 @@ using System.Collections;
 public class PointUI : MonoBehaviour 
 {
 
-Point pointData = null; 
+    PointData pointData = null; 
 	// Use this for initialization
 	void Start () {
 	
