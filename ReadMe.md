@@ -1,0 +1,1 @@
+This is a project for displaying multidimensional data in a 3d model using position, time, color transparency and point radius.
