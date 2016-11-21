@@ -17,7 +17,7 @@ public class Project
     // under development
     void Normalize()
     {
-        // go through all of the raw values that are associated with a numerical dimension
+        // todo go through all of the raw values that are associated with a numerical dimension
         // find the high and low value for each dimension
         if (null= aastrRawData)
         {
@@ -29,7 +29,7 @@ public class Project
                 {
                     try
                     {
-                        // store the min and max values for each dimension 
+                        // todo store the min and max values for each dimension 
                     }
                     catch (System.Exception)
                     {
@@ -42,9 +42,9 @@ public class Project
                 }
             }
         }
-        // Using the min and max values for each dimension, establish the corresponding float value on the range 
+        // todo using the min and max values for each dimension, establish the corresponding float value on the range 
         // 0f to 1f for each dimension of each record.
-        // add all original values to the PointData dictionary.
+        // add all original values to the PointData's  dictionary.
 
     }
 }
