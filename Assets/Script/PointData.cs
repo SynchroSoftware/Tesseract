@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
+//using System.Collections;
 
 public class PointData : MonoBehaviour 
 {
 
-	float [] anData =
-	{
-		0f, // X
+    float[] anData =
+    {
+        0f, // X
 		0f, // Y
 		0f, // Z
 		0f, // R
@@ -14,7 +14,7 @@ public class PointData : MonoBehaviour
 		0f, // B
 		0f, // A
 		0f, // Radius
-	}
+	};
 
 	// Use this for initialization
 	void Start () 
