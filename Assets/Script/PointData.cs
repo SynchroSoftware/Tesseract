@@ -14,23 +14,39 @@ public class PointData
 	public float Rad {get; set;} // Radius
 	public float Ts  {get; set;} // Time Start
 	public float Te  {get; set;} // Time End
-	public Dictionary<string,string> m_mOther = new Dictionary<string,string>(); // other data key value pairs associated with the PointData
+	public List<string> m_astAllData = null; // other data key value pairs associated with the PointData
 
-	public PointData(string strName, float nX,float nY,float nZ,float nR,float nG,float nB,float nA,float nRad,float nTs = Float.min ,float nTe = Float.max, Dictionary mOtherData = null)
+	bool VerifyInRange(float nVal)
+	{
+		return ((0f < nVal)&&(1f > nVal));
+	}
+
+	public PointData(string strName, List<float> anDimensions, List<string> astAllData)
 	{
 		// When creating a new PointData each numerical
 		// dimension should have a normalized value between 0f and 1f
-		X =  nX;
-		Y =  nY;
-		Z =  nZ;
-		R =  nR;
-		G =  nG;
-		B =  nB;
-		A =  nA;
-		Rad =  nRad;
-		Ts =  nTs;
-		Te =  nTe;
+		
 		Name = strName;
-		m_mOther = mOtherData;
+		// Validate each  anDimensions member to ensure it is normalized
+		foreach (float nCoordinate in anDimensions)
+		{
+			bool bInRange = VerifyInRange(nCoordinate);
+			///
+		
+		}
+		// Set each dimension member from anDimensions or default it.
+		int nIndex = 0;
+		foreach (float nCoordinate in anDimensions)
+		{
+			switch (nIndex)
+			{
+				
+
+			}
+
+			++nIndex;
+		}
+		
+		m_astAllData = astAllData;
 	}
 }
