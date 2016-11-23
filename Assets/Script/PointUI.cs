@@ -4,21 +4,21 @@ using UnityEngine;
 public class PointUI : MonoBehaviour 
 {
 
-    public PointData pointData = null;
+    public Point\Data PointInfo {set; set;}
 
-	GameObject point;
+	GameObject PointGameObject;
 
 	// Use this for initialization
 	void Start () 
 	{
-		if (null==pointData)
+		if (null==PointInfo)
 		{
-			point = AddPoint  
+			PointInfo = AddPointGameObject  
 			(
-				pointData.Name, 
-				new Vector3(pointData.X,pointData.Y,pointData.Z)
-				pointData.Rad,
-				new Color (pointData.R,pointData.G,pointData.B,pointData.A)
+				PointInfo.Name, 
+				new Vector3(PointInfo.X,PointInfo.Y,PointInfo.Z)
+				PointInfo.Rad,
+				new Color (PointInfo.R,PointInfo.G,PointInfo.B,PointInfo.A)
 			);
 		}
 	}
@@ -28,13 +28,9 @@ public class PointUI : MonoBehaviour
 	{
 	
 	}
-
-
-	static public GameObject AddPoint (string strName, Vector3 anPos, float nRadius, Color color)
+	static public GameObject AddPointGameObject (string strName, Vector3 anPos, float nRadius, Color color)
 	{
 		GameObject rgo = Project.GetRootGameObject ();
-		
-
 		GameObject sphere = GameObject.CreatePrimitive (PrimitiveType.Sphere); 
 		sphere.transform.parent = rgo.transform;
 		sphere.name = strName;
